@@ -7,8 +7,8 @@ import ContactForm from '../ContactForm';
 import ContactsFilter from '../ContactsFilter';
 import ContactList from '../ContactList';
 import { MainBlock, MainTitle, Title } from './App.styled';
-import { fetchContacts } from 'redux/operations';
-import { selectError } from 'redux/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
+import { selectError } from 'redux/contacts/selectors';
 
 const App = () => {
   const dispatch = useDispatch();

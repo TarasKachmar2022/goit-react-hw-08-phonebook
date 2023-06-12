@@ -16,11 +16,11 @@ import {
   FormBtn,
   FormBtnWrapper,
 } from './ContactForm.styled';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 import { BsTelephoneFill } from 'react-icons/bs';
 import { FaUser } from 'react-icons/fa';
 import { IoMdPersonAdd } from 'react-icons/io';
-import { selectContacts } from '../../redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const schema = yup.object().shape({
   name: yup.string().required(),

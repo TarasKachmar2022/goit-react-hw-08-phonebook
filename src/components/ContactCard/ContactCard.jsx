@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { ThreeDots } from 'react-loader-spinner';
 import { IoPersonRemove } from 'react-icons/io5';
-import { deleteContact } from '../../redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import {
   ContactItem,
   ContactContainer,
