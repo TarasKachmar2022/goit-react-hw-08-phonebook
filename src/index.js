@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 // import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
-import App from 'components/App';
+import App from './components/App';
 import { theme } from './styled/Theme';
 import { store } from './redux/store';
 
@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         {/* <PersistGate loading={null} persistor={persistor}> */}
-        <BrowserRouter>
+        <BrowserRouter basename="goit-react-hw-08-phonebook">
           <App />
         </BrowserRouter>
         {/* </PersistGate> */}
