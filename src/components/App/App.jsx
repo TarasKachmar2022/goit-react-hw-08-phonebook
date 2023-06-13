@@ -1,40 +1,26 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Toaster, toast } from 'react-hot-toast';
-import { GlobalStyle } from '../../styled/globalStyle';
-import { Layout } from '../Layout/Layout';
-import ContactForm from '../ContactForm';
-import ContactsFilter from '../ContactsFilter';
-import ContactList from '../ContactList';
-import { MainBlock, MainTitle, Title } from './App.styled';
-import { fetchContacts } from 'redux/contacts/operations';
-import { selectError } from 'redux/contacts/selectors';
+import { Route, Routes } from 'react-router-dom';
+import routes from 'routes';
+import SharedLayout from '../SharedLayout';
+
+import HomePage from 'pages/HomePage';
+import RegisterPage from 'pages/RegisterPage';
+import LoginPage from 'pages/LoginPage';
+import ContactsPage from 'pages/ContactsPage/ContactsPage';
+import NotFoundPage from 'pages/NotFoundPage';
 
 const App = () => {
-  const dispatch = useDispatch();
-  const error = useSelector(selectError);
-
-  useEffect(() => {
-    if (!error) return;
-    toast.error('Oops, something went wrong, please try again!');
-  }, [error]);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
-    <Layout>
-      <MainBlock>
-        <MainTitle>Phonebook</MainTitle>
-        <ContactForm />
-        <Title>Contacts</Title>
-        <ContactsFilter />
-        <ContactList />
-        <GlobalStyle />
-      </MainBlock>
-      <Toaster position="top-right" />
-    </Layout>
+    <>
+      <Routes>
+        <Route path={routes.HOME} element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path={routes.REGISTER} element={<RegisterPage />} />
+          <Route path={routes.LOGIN} element={<LoginPage />} />
+          <Route path={routes.CONTACTS} element={<ContactsPage />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 };
 
