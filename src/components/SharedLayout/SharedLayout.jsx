@@ -1,15 +1,18 @@
 import { Outlet } from 'react-router-dom';
+import { GlobalStyle } from 'styled/globalStyle';
 import AppBar from 'components/AppBar';
 import Footer from 'components/Footer';
+import { Container } from './SharedLayout.styled';
 
 const SharedLayout = () => {
   return (
     <>
       <AppBar />
-      <hr />
-      <Outlet />
-      <hr />
+      <Container>
+        <Outlet />
+      </Container>
       <Footer />
+      <GlobalStyle />
     </>
   );
 };

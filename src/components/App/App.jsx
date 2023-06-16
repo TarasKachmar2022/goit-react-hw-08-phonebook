@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 // import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import Loader from '../Loader';
+import Loader from '../Loader';
 import routes from 'routes';
 import SharedLayout from 'components/SharedLayout';
 import { useAuth } from 'hooks';
@@ -25,7 +25,8 @@ const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    // <b>Refreshing user...</b>
+    <Loader />
   ) : (
     <Routes>
       <Route path={routes.HOME} element={<SharedLayout />}>

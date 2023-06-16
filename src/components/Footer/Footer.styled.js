@@ -12,7 +12,8 @@ export const FooterContainer = styled.footer`
   /* font-size: 14px; */
   /* line-height: 1.14; */
   /* color: #545454; */
-  background-color: #f7f7f7;
+  backdrop-filter: blur(7.5px);
+  box-shadow: rgb(0, 0, 0) 0px 0px 80px;
 
   /* @media screen and (min-width: 768px) {
     font-size: 16px;

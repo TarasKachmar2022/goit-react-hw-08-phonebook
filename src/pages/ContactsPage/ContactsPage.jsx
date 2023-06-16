@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Toaster, toast } from 'react-hot-toast';
-import { GlobalStyle } from '../../styled/globalStyle';
 // import { SharedLayout } from 'components/SharedLayout';
 import ContactForm from 'components/ContactForm';
 import ContactsFilter from 'components/ContactsFilter';
@@ -31,7 +30,6 @@ const ContactsPage = () => {
         <Title>Contacts</Title>
         <ContactsFilter />
         <ContactList />
-        <GlobalStyle />
       </MainBlock>
       <Toaster position="top-right" />
     </>
