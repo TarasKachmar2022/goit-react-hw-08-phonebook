@@ -1,6 +1,6 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { toast } from 'react-hot-toast';
 import { ThreeDots } from 'react-loader-spinner';
 import { useState } from 'react';
@@ -49,16 +49,16 @@ const ContactForm = () => {
     }
 
     const newContact = {
-      id: nanoid(),
+      // id: nanoid(),
       name: values.name,
-      phone: values.number,
+      number: values.number,
     };
 
-    handleAdd(newContact);
+    handleAddBtn(newContact);
     resetForm();
   };
 
-  const handleAdd = async newContact => {
+  const handleAddBtn = async newContact => {
     try {
       setIsAdding(true);
       await dispatch(addContact(newContact));

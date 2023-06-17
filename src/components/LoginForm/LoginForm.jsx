@@ -1,7 +1,21 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import routes from 'routes';
 import { login } from '../../redux/auth/auth-operations';
+import {
+  Form,
+  MainTitle,
+  LoginFormLabel,
+  LoginFormLabelSpan,
+  LoginInputField,
+  ErrorMessage,
+  LoginFormLoginLink,
+  LoginRegisterLink,
+  LoginFormBtnWrap,
+  LoginFormBtn,
+} from './LoginForm.styled';
 
 const initialValues = { email: '', password: '' };
 
@@ -23,16 +37,16 @@ const LoginForm = () => {
 
   return (
     <>
-      <h1>Log In</h1>
+      <MainTitle>Log In</MainTitle>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
         <Form>
-          <label htmlFor="email">
-            <span>Email</span>
-            <Field
+          <LoginFormLabel htmlFor="email">
+            <LoginFormLabelSpan>Email</LoginFormLabelSpan>
+            <LoginInputField
               id="email"
               type="email"
               name="email"
@@ -40,19 +54,26 @@ const LoginForm = () => {
               placeholder="Enter email"
             />
             <ErrorMessage name="email" component="div" />
-          </label>
-
-          <label htmlFor="password">
-            <span>Password</span>
-            <Field
+          </LoginFormLabel>
+          <LoginFormLabel htmlFor="password">
+            <LoginFormLabelSpan>Password</LoginFormLabelSpan>
+            <LoginInputField
               id="password"
               type="password"
               name="password"
               placeholder="Enter password"
             />
             <ErrorMessage name="password" component="div" />
-          </label>
-          <button type="submit">Log in</button>
+          </LoginFormLabel>
+          <LoginFormBtnWrap>
+            <LoginFormLoginLink>
+              <p> First time on Netflix?</p>
+              <LoginRegisterLink>
+                <Link to={`${routes.REGISTER}`}>Sign up.</Link>
+              </LoginRegisterLink>
+            </LoginFormLoginLink>
+            <LoginFormBtn type="submit">Log in</LoginFormBtn>
+          </LoginFormBtnWrap>
         </Form>
       </Formik>
     </>

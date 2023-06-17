@@ -15,12 +15,25 @@ const authSlice = createSlice({
 
   extraReducers: builder => {
     builder
+      .addCase(register.pending, state => {
+        state.isRefreshing = true;
+      })
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.error = null;
+      })
+      .addCase(register.rejected, (state, action) => {
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
+        state.isRefreshing = false;
+        state.error = action.payload;
+      })
+      .addCase(login.pending, state => {
+        state.isRefreshing = true;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
@@ -29,7 +42,24 @@ const authSlice = createSlice({
         state.isRefreshing = false;
         state.error = null;
       })
+      .addCase(login.rejected, (state, action) => {
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
+        state.isRefreshing = false;
+        state.error = action.payload;
+      })
+      .addCase(logout.pending, state => {
+        state.isRefreshing = true;
+      })
       .addCase(logout.fulfilled, () => initialState)
+      .addCase(logout.rejected, (state, action) => {
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
+        state.isRefreshing = false;
+        state.error = action.payload;
+      })
       .addCase(fetchCurrentUser.pending, state => {
         state.isRefreshing = true;
       })
@@ -39,8 +69,12 @@ const authSlice = createSlice({
         state.isRefreshing = false;
         state.error = null;
       })
-      .addCase(fetchCurrentUser.rejected, state => {
-        state.isRefreshing = true;
+      .addCase(fetchCurrentUser.rejected, (state, action) => {
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
+        state.isRefreshing = false;
+        state.error = action.payload;
       });
   },
 });

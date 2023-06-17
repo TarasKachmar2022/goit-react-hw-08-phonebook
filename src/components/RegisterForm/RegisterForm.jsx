@@ -1,7 +1,21 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { register } from '../../redux/auth/auth-operations';
+import routes from 'routes';
+import {
+  Form,
+  MainTitle,
+  RegisterFormLabel,
+  RegisterFormLabelSpan,
+  RegisterInputField,
+  ErrorMessage,
+  RegisterFormBtnWrap,
+  RegisterLoginLink,
+  RegisterFormLoginLink,
+  RegisterFormBtn,
+} from './RegisterForm.styled';
 
 const initialValues = { name: '', email: '', password: '' };
 
@@ -24,41 +38,54 @@ const RegisterForm = () => {
 
   return (
     <>
-      <h1>Register</h1>
+      <MainTitle>Register</MainTitle>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
         <Form>
-          <label htmlFor="name">
-            <span>Name</span>
-            <Field id="name" name="name" autoFocus placeholder="Enter name" />
+          <RegisterFormLabel htmlFor="name">
+            <RegisterFormLabelSpan>Name</RegisterFormLabelSpan>
+            <RegisterInputField
+              id="name"
+              name="name"
+              autoFocus
+              placeholder="Enter name"
+            />
             <ErrorMessage name="name" component="div" />
-          </label>
+          </RegisterFormLabel>
 
-          <label htmlFor="email">
-            <span>Email</span>
-            <Field
+          <RegisterFormLabel htmlFor="email">
+            <RegisterFormLabelSpan>Email</RegisterFormLabelSpan>
+            <RegisterInputField
               id="email"
               type="email"
               name="email"
               placeholder="Enter email"
             />
             <ErrorMessage name="email" component="div" />
-          </label>
+          </RegisterFormLabel>
 
-          <label htmlFor="password">
-            <span>Password</span>
-            <Field
+          <RegisterFormLabel htmlFor="password">
+            <RegisterFormLabelSpan>Password</RegisterFormLabelSpan>
+            <RegisterInputField
               id="password"
               type="password"
               name="password"
               placeholder="Enter password"
             />
             <ErrorMessage name="password" component="div" />
-          </label>
-          <button type="submit">Register</button>
+          </RegisterFormLabel>
+          <RegisterFormBtnWrap>
+            <RegisterFormLoginLink>
+              <p> Already registered?</p>
+              <RegisterLoginLink>
+                <Link to={`${routes.LOGIN}`}>Log In.</Link>
+              </RegisterLoginLink>
+            </RegisterFormLoginLink>
+            <RegisterFormBtn type="submit">Register</RegisterFormBtn>
+          </RegisterFormBtnWrap>
         </Form>
       </Formik>
     </>

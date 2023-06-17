@@ -60,7 +60,7 @@ export const ContactNumber = styled.span`
   }
 `;
 
-export const DeleteBtn = styled.button`
+export const EditBtn = styled.button`
   background-color: ${p => p.theme.colors.darkGrey};
   border-radius: 10px;
 
@@ -75,6 +75,35 @@ export const DeleteBtn = styled.button`
   :active {
     scale: 0.95;
     background-color: ${p => p.theme.colors.orange};
+  }
+
+  @media screen and (min-width: 320px) {
+    padding: 10px 15px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 6px 10px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 6px 10px;
+    text-align: end;
+  }
+`;
+
+export const DeleteBtn = styled.button`
+  background-color: ${p => p.theme.colors.darkGrey};
+  border-radius: 10px;
+
+  color: ${p => p.theme.colors.white};
+  background-color: ${p => p.theme.colors.darkGrey};
+  transition: background-color 250ms linear;
+
+  :hover {
+    background-color: ${p => p.theme.colors.error};
+  }
+
+  :active {
+    scale: 0.95;
+    background-color: ${p => p.theme.colors.error};
   }
 
   @media screen and (min-width: 320px) {

@@ -1,16 +1,43 @@
 import styled from 'styled-components';
 
+export const DeveloperMainBlock = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 440px;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+    width: 650px;
+  }
+`;
+
 export const DeveloperContainer = styled.div`
   list-style: none;
+  backdrop-filter: blur(7.5px);
+  box-shadow: rgb(0, 0, 0) 0px 0px 80px;
+
+  @media screen and (min-width: 320px) {
+    width: 300px;
+  }
 
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
+    padding: 20px 0;
+    width: 650px;
   }
 
   @media screen and (min-width: 1280px) {
+    border-radius: 5px;
     padding-top: 29px;
     padding-bottom: 29px;
+    width: 850px;
   }
 `;
 
@@ -37,6 +64,7 @@ export const DeveloperContactsContainer = styled.div`
 `;
 
 export const DeveloperName = styled.h3`
+  text-shadow: ${p => p.theme.shadows.textShadow};
   text-align: center;
   font-size: 36px;
 
@@ -50,8 +78,10 @@ export const DeveloperName = styled.h3`
 `;
 
 export const DeveloperRole = styled.p`
+  text-shadow: ${p => p.theme.shadows.textShadow};
   text-align: center;
   font-size: 32px;
+  font-weight: 700;
 
   @media screen and (min-width: 768px) {
     margin: 14px;
@@ -87,6 +117,7 @@ export const DeveloperContactsItem = styled.li`
 
 export const DeveloperLink = styled.a`
   padding: 20px;
+  filter: drop-shadow(0 0 5px #fff);
 
   &:hover svg {
     fill: orange;
@@ -94,6 +125,7 @@ export const DeveloperLink = styled.a`
 `;
 
 export const DeveloperSkilsTitle = styled.h4`
+  text-shadow: ${p => p.theme.shadows.textShadow};
   text-align: center;
   font-size: 32px;
 
@@ -107,7 +139,13 @@ export const DeveloperSkilsTitle = styled.h4`
 `;
 
 export const DeveloperSkilsList = styled.ul`
+  font-weight: 600;
   margin-left: 30px;
+  text-align: start;
+
+  @media screen and (min-width: 320px) {
+    padding-bottom: 10px;
+  }
 `;
 
 export const DeveloperSkilsItem = styled.li`

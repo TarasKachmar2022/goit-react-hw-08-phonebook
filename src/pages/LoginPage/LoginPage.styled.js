@@ -1,27 +1,27 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const RegisterMainBlock = styled.div`
+  backdrop-filter: blur(7.5px);
+  box-shadow: rgb(0, 0, 0) 0px 0px 80px;
+
   @media screen and (min-width: 320px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 7px 10px;
+    width: 300px;
   }
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px 20px;
+    width: 440px;
   }
   @media screen and (min-width: 1280px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 15px 30px;
-    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    width: 650px;
   }
 `;

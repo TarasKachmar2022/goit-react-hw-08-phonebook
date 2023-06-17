@@ -28,6 +28,7 @@ const DeveloperPage = () => {
         // sizes="(max-width: 1200px) 1200px, (max-width: 768px) 768px, (max-width: 480px) 480px, 100vw"
         src={developerPhoto}
         alt="Developer"
+        width="300"
       />
       <DeveloperContactsContainer>
         <div>

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Toaster, toast } from 'react-hot-toast';
-// import { SharedLayout } from 'components/SharedLayout';
 import ContactForm from 'components/ContactForm';
 import ContactsFilter from 'components/ContactsFilter';
 import ContactList from 'components/ContactList';
