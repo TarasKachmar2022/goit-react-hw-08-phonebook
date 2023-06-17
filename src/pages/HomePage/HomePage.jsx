@@ -1,8 +1,10 @@
+import { MainBlock, MainTitle } from './HomePage.styled';
+
 const HomePage = () => {
   return (
-    <>
-      <h1>Hello world!!!</h1>
-    </>
+    <MainBlock>
+      <MainTitle>Phonebook</MainTitle>
+    </MainBlock>
   );
 };
 

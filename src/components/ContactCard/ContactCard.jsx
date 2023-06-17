@@ -15,6 +15,7 @@ import {
   ContactContainer,
   ContactTitle,
   ContactNumber,
+  ContactsBtnWrap,
   DeleteBtn,
   EditBtn,
 } from './ContactCard.styled';
@@ -64,7 +65,7 @@ const ContactCard = ({ id, name, number }) => {
         <ContactTitle>{name}:</ContactTitle>
         <ContactNumber>{number}</ContactNumber>
       </ContactContainer>
-      <div>
+      <ContactsBtnWrap>
         <EditBtn type="button" onClick={() => showModal(id)}>
           {(openModal && (
             <ThreeDots height="20" width="16" color="white" />
@@ -78,7 +79,7 @@ const ContactCard = ({ id, name, number }) => {
             <ThreeDots height="20" width="16" color="white" />
           )) || <IoPersonRemove />}
         </DeleteBtn>
-      </div>
+      </ContactsBtnWrap>
     </ContactItem>
   );
 };

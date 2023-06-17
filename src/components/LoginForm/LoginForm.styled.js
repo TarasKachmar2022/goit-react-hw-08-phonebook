@@ -130,6 +130,7 @@ export const LoginFormBtn = styled.button`
 export const LoginFormLoginLink = styled.div`
   display: flex;
   margin-bottom: 20px;
+  font-weight: 600;
 `;
 
 export const LoginRegisterLink = styled.span`

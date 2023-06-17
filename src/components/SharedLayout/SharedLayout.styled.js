@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 7px 10px;
+    padding: 55px 10px 7px 10px;
   }
   @media screen and (min-width: 768px) {
     display: flex;
@@ -14,14 +14,14 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px 20px;
+    padding: 58px 20px 10px 20px;
   }
   @media screen and (min-width: 1280px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px 30px;
+    padding: 63px 30px 15px 30px;
     text-align: center;
   }
 `;

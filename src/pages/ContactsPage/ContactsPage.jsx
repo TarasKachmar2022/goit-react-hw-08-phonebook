@@ -24,7 +24,7 @@ const ContactsPage = () => {
   return (
     <>
       <MainBlock>
-        <MainTitle>Phonebook</MainTitle>
+        <MainTitle>Add contact</MainTitle>
         <ContactForm />
         <Title>Contacts</Title>
         <ContactsFilter />

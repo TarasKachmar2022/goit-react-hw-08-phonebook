@@ -60,6 +60,10 @@ export const ContactNumber = styled.span`
   }
 `;
 
+export const ContactsBtnWrap = styled.div`
+  display: flex;
+`;
+
 export const EditBtn = styled.button`
   background-color: ${p => p.theme.colors.darkGrey};
   border-radius: 10px;
