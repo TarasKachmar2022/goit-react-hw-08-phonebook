@@ -4,11 +4,15 @@ import { NavLink as Link } from 'react-router-dom';
 export const NavigationContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 5px;
 `;
 
 export const NavLinkWrap = styled.div`
-  padding-right: 30px;
+  @media screen and (min-width: 320px) {
+    margin-right: 5px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: 10px;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -32,6 +36,13 @@ export const NavLink = styled(Link)`
   &:hover {
     background-color: ${p => p.theme.colors.orange};
     color: white;
+  }
+
+  @media screen and (min-width: 320px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 

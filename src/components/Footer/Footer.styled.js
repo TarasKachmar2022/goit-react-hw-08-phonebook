@@ -7,23 +7,44 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   backdrop-filter: blur(7.5px);
   box-shadow: rgb(0, 0, 0) 0px 0px 80px;
+
+  @media screen and (width: 320px) {
+    padding: 5px 10px;
+  }
+  @media screen and (width: 768px) {
+    padding: 0 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 0 40px;
+  }
 `;
 
 export const Text = styled.p`
-  margin: 8px 5px 16px 0;
+  margin: 8px 5px 8px 5px;
+  @media screen and (min-width: 320px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const StyledBy = styled.p`
-  margin: 8px 0 16px 5px;
+  margin: 8px 5px 8px 5px;
+  @media screen and (min-width: 320px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const StudentBtn = styled(Link)`
-  margin: 8px 5px 16px 5px;
+  margin: 8px 5px 8px 5px;
   border: none;
   display: inline-block;
   font-family: inherit;
   font-weight: 400;
-  font-size: 14px;
   line-height: 1.14;
   text-decoration: underline;
   cursor: pointer;
@@ -33,7 +54,14 @@ export const StudentBtn = styled(Link)`
   &:hover,
   &:focus {
     color: #ff6b08;
-  }
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: 320px) {
+      font-size: 12px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+  }
 `;

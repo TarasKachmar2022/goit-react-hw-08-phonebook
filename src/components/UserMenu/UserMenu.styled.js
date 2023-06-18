@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  padding-right: 40px;
 `;
 
 export const Image = styled.img`
@@ -14,6 +13,17 @@ export const Title = styled.div`
   font-weight: 600;
   margin-left: 10px;
   color: ${p => p.theme.colors.white};
+
+  @media screen and (min-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 5px;
+    font-size: 16px;
+  }
 `;
 
 export const LogoutWrap = styled.div`
@@ -40,8 +50,22 @@ export const Logout = styled.button`
     background-color: ${p => p.theme.colors.orange};
     color: white;
   }
+
+  @media screen and (min-width: 320px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const LogoutText = styled.span`
   margin-left: 3px;
+
+  @media screen and (min-width: 320px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;

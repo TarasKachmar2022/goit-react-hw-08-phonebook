@@ -19,9 +19,12 @@ const UserMenu = () => {
   return (
     <Container>
       <div>
-        <Image src={avatar} alt="" width="32" />
+        <Image src={avatar} alt="" width="32" height="32" />
       </div>
-      <Title>Hello, {user} </Title>
+      <Title>
+        <span>Hello, </span>
+        <span> {user}</span>
+      </Title>
       <LogoutWrap>
         <Logout type="button" onClick={() => dispatch(logout())}>
           <RiLogoutBoxRLine /> <LogoutText>Log Out</LogoutText>

@@ -32,6 +32,7 @@ export const DeveloperContainer = styled.div`
     justify-content: center;
     padding: 20px 0;
     width: 650px;
+    min-height: 85vh;
   }
 
   @media screen and (min-width: 1280px) {
@@ -39,6 +40,7 @@ export const DeveloperContainer = styled.div`
     padding-top: 29px;
     padding-bottom: 29px;
     width: 850px;
+    min-height: 83vh;
   }
 `;
 
