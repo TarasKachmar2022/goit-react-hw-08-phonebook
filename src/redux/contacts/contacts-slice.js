@@ -59,8 +59,8 @@ export const contactsSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(updateContact.fulfilled, (state, action) => {
-        const index = state.items.filter(item => action.payload.id === item.id);
-        state.items.splice(index, 1, action.payload);
+        state.items = state.items.filter(item => action.payload.id !== item.id);
+        state.items.push(action.payload);
         state.isLoading = false;
         state.error = null;
       })

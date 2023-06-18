@@ -1,7 +1,7 @@
 import routes from 'routes';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks';
-import { MainBlock, MainTitle, HomeLink, Title, Text } from './HomePage.styled';
+import { MainBlock, MainTitle, Title, Text } from './HomePage.styled';
 
 const HomePage = () => {
   const { isLoggedIn } = useAuth();
