@@ -13,7 +13,7 @@ export const Overlay = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  background-image: url('https://pixabay.com/get/geca127ad69e282e4df5e9af2d6a8084ea692607f98d1a18436769b4e69c4db3f6f47a64da9aa0b03a84f1567c35952dd33a1b73cd7a5eaa533a73b78d4006205_1280.jpg');
+  background-image: url('https://pixabay.com/get/g3f529f6d1373745a3b160ff3ad97d8a6a167b3bd43ae347e8c013a244ea2858f7a27476914ed1fe6818ce581dd1d71d1b5579539e8c15aa3be9b684030a0ec16_1280.jpg');
   border: 5px solid darkgrey;
   border-radius: 7px;
 
