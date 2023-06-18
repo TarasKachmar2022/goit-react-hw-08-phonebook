@@ -21,6 +21,7 @@ export const DeveloperContainer = styled.div`
   list-style: none;
   backdrop-filter: blur(7.5px);
   box-shadow: rgb(0, 0, 0) 0px 0px 80px;
+  min-height: 82vh;
 
   @media screen and (min-width: 320px) {
     width: 300px;

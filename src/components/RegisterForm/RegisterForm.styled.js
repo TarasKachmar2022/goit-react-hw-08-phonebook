@@ -69,6 +69,15 @@ export const RegisterFormLabelSpan = styled.span`
   }
 `;
 
+export const RegisterLabelIcon = styled.span`
+  margin: 0 10px;
+
+  & svg {
+    font-size: 18px;
+    filter: drop-shadow(0 0 5px #fff);
+  }
+`;
+
 export const RegisterInputField = styled(Field)`
   background-color: rgba(255, 255, 255, 80%);
   line-height: 1.5;
@@ -95,6 +104,7 @@ export const ErrorMessage = styled(FormikErrorMessage)`
 `;
 
 export const RegisterFormBtn = styled.button`
+  display: flex;
   font-weight: 700;
   border: 1px solid ${p => p.theme.colors.grey};
   color: ${p => p.theme.colors.white};
@@ -125,6 +135,10 @@ export const RegisterFormBtn = styled.button`
     border-radius: 10px;
     padding: 10px 20px;
   }
+`;
+
+export const RegisterFormBtnText = styled.span`
+  margin-left: 3px;
 `;
 
 export const RegisterFormLoginLink = styled.div`

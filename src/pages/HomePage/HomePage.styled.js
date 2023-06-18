@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const MainBlock = styled.div`
   backdrop-filter: blur(7.5px);
   box-shadow: rgb(0, 0, 0) 0px 0px 80px;
+  min-height: 82vh;
 
   @media screen and (min-width: 320px) {
     display: flex;
@@ -38,6 +39,18 @@ export const MainTitle = styled.h1`
     margin-top: 28px;
   }
   @media screen and (min-width: 1280px) {
-    font-size: 56px;
+    font-size: 72px;
   }
+`;
+
+export const Title = styled.h2`
+  text-shadow: ${p => p.theme.shadows.textShadow};
+  font-size: 36px;
+  margin-bottom: 60px;
+`;
+
+export const Text = styled.p`
+  font-size: 24px;
+  font-weight: 700;
+  width: 450px;
 `;

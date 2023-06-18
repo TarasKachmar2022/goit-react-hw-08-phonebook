@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-export const RegisterMainBlock = styled.div`
+export const LoginMainBlock = styled.div`
   backdrop-filter: blur(7.5px);
   box-shadow: rgb(0, 0, 0) 0px 0px 80px;
+  min-height: 82vh;
 
   @media screen and (min-width: 320px) {
     display: flex;

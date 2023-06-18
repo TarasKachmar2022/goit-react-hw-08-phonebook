@@ -43,9 +43,13 @@ export const deleteContact = createAsyncThunk(
 
 export const updateContact = createAsyncThunk(
   'contacts/updateContact',
-  async ({ id, data }, { rejectWithValue }) => {
+  async ({ id, name, number }, { rejectWithValue }) => {
+    console.log(id);
     try {
-      const contacts = await APIs.updateContact(id);
+      const contacts = await APIs.updateContact(id, {
+        name,
+        number,
+      });
       toast.success('Contact updated successfully!');
       return contacts;
     } catch (error) {
@@ -53,16 +57,3 @@ export const updateContact = createAsyncThunk(
     }
   }
 );
-//   async (data, { rejectWithValue }) => {
-//     try {
-//       const { data: result } = await api.editContact(data);
-//       toast.success('Contact update', {
-//         position: 'bottom-right',
-//       });
-//       // console.log(result);
-//       return result;
-//     } catch ({ response }) {
-//       return rejectWithValue(`Ooops! Wrong... Try again or update browser`);
-//     }
-//   }
-// );

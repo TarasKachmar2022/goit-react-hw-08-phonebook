@@ -2,14 +2,15 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import ModalForm from 'components/ModalForm';
+import CloseBtn from '../CloseBtn/CloseBtn';
 import { Overlay, ModalContainer } from 'components/Modal/Modal.styled';
 
 const rootModal = document.querySelector('#rootModal');
 
 const Modal = ({ id, name, number, onClose }) => {
   useEffect(() => {
-    const handleKeyDown = e => {
-      if (e.code === 'Escape') {
+    const handleKeyDown = event => {
+      if (event.code === 'Escape') {
         onClose();
       }
     };
@@ -19,26 +20,28 @@ const Modal = ({ id, name, number, onClose }) => {
     };
   }, [onClose]);
 
-  const handleBackdropClick = e => {
-    if (e.currentTarget === e.target) {
+  const handleBackdropClose = event => {
+    if (event.currentTarget === event.target) {
       onClose();
     }
   };
 
   return createPortal(
-    <Overlay onClick={handleBackdropClick}>
+    <Overlay onClick={handleBackdropClose}>
       <ModalContainer>
-        <ModalForm>{{ id, name, number, onClose }}</ModalForm>
+        <CloseBtn onClose={onClose} />
+        <ModalForm id={id} name={name} number={number} onClose={onClose} />
       </ModalContainer>
     </Overlay>,
     rootModal
   );
 };
 
-// ModalImg.propTypes = {
-//   largeImageURL: PropTypes.string.isRequired,
-//   tags: PropTypes.string.isRequired,
-//   onClose: PropTypes.func.isRequired,
-// };
+Modal.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default Modal;

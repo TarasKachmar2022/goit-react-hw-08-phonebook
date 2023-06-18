@@ -69,6 +69,15 @@ export const LoginFormLabelSpan = styled.span`
   }
 `;
 
+export const LoginLabelIcon = styled.span`
+  margin: 0 10px;
+
+  & svg {
+    font-size: 18px;
+    filter: drop-shadow(0 0 5px #fff);
+  }
+`;
+
 export const LoginInputField = styled(Field)`
   background-color: rgba(255, 255, 255, 80%);
   line-height: 1.5;
@@ -95,6 +104,7 @@ export const ErrorMessage = styled(FormikErrorMessage)`
 `;
 
 export const LoginFormBtn = styled.button`
+  display: flex;
   font-weight: 700;
   border: 1px solid ${p => p.theme.colors.grey};
   color: ${p => p.theme.colors.white};
@@ -126,10 +136,13 @@ export const LoginFormBtn = styled.button`
     padding: 10px 20px;
   }
 `;
+export const LoginFormBtnText = styled.span`
+  margin-left: 3px;
+`;
 
 export const LoginFormLoginLink = styled.div`
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-weight: 600;
 `;
 

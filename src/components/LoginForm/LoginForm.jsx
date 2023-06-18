@@ -3,18 +3,23 @@ import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import routes from 'routes';
+import { RiLoginBoxLine } from 'react-icons/ri';
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
 import { login } from '../../redux/auth/auth-operations';
 import {
   Form,
   MainTitle,
   LoginFormLabel,
   LoginFormLabelSpan,
+  LoginLabelIcon,
   LoginInputField,
   ErrorMessage,
   LoginFormLoginLink,
   LoginRegisterLink,
   LoginFormBtnWrap,
   LoginFormBtn,
+  LoginFormBtnText,
 } from './LoginForm.styled';
 
 const initialValues = { email: '', password: '' };
@@ -45,7 +50,12 @@ const LoginForm = () => {
       >
         <Form>
           <LoginFormLabel htmlFor="email">
-            <LoginFormLabelSpan>Email</LoginFormLabelSpan>
+            <LoginFormLabelSpan>
+              <LoginLabelIcon>
+                <MdEmail />
+              </LoginLabelIcon>
+              Email
+            </LoginFormLabelSpan>
             <LoginInputField
               id="email"
               type="email"
@@ -56,7 +66,12 @@ const LoginForm = () => {
             <ErrorMessage name="email" component="div" />
           </LoginFormLabel>
           <LoginFormLabel htmlFor="password">
-            <LoginFormLabelSpan>Password</LoginFormLabelSpan>
+            <LoginFormLabelSpan>
+              <LoginLabelIcon>
+                <RiLockPasswordFill />
+              </LoginLabelIcon>
+              Password
+            </LoginFormLabelSpan>
             <LoginInputField
               id="password"
               type="password"
@@ -72,7 +87,10 @@ const LoginForm = () => {
                 <Link to={`${routes.REGISTER}`}>Sign up.</Link>
               </LoginRegisterLink>
             </LoginFormLoginLink>
-            <LoginFormBtn type="submit">Log in</LoginFormBtn>
+            <LoginFormBtn type="submit">
+              <RiLoginBoxLine />
+              <LoginFormBtnText>Log in</LoginFormBtnText>
+            </LoginFormBtn>
           </LoginFormBtnWrap>
         </Form>
       </Formik>

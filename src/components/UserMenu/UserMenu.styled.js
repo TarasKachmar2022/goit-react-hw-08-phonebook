@@ -21,6 +21,7 @@ export const LogoutWrap = styled.div`
 `;
 
 export const Logout = styled.button`
+  display: flex;
   text-decoration: none;
   font-weight: 600;
   border-radius: 25px;
@@ -39,4 +40,8 @@ export const Logout = styled.button`
     background-color: ${p => p.theme.colors.orange};
     color: white;
   }
+`;
+
+export const LogoutText = styled.span`
+  margin-left: 3px;
 `;

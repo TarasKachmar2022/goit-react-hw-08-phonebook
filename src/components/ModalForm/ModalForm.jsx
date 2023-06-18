@@ -1,7 +1,6 @@
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { login } from '../../redux/auth/auth-operations';
 import {
   MainTitle,
   FormLabel,
@@ -13,19 +12,25 @@ import {
 } from '../../components/ModalForm/ModalForm.styled';
 import { FaUser } from 'react-icons/fa';
 import { BsTelephoneFill } from 'react-icons/bs';
-
-const initialValues = { name: '', number: '' };
+import { FaEdit } from 'react-icons/fa';
+import { updateContact } from '../../redux/contacts/operations';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
   number: yup.number().required(),
 });
 
-const ModalForm = () => {
+const ModalForm = ({ id, name, number, onClose }) => {
+  const initialValues = { name: name, number: number };
   const dispatch = useDispatch();
 
   const handleSubmit = values => {
-    dispatch(login(values));
+    const newContact = {
+      id: id,
+      ...values,
+    };
+    dispatch(updateContact(newContact));
+    onClose();
   };
 
   return (
@@ -48,7 +53,6 @@ const ModalForm = () => {
               id="name"
               type="text"
               name="name"
-              autoFocus
               placeholder="Enter name"
             />
             <ErrorMessage name="name" component="div" />
@@ -69,7 +73,12 @@ const ModalForm = () => {
             />
             <ErrorMessage name="number" component="div" />
           </FormLabel>
-          <FormBtn type="submit">Edit</FormBtn>
+          <FormBtn type="submit">
+            <span>
+              <FaEdit />{' '}
+            </span>
+            Edit
+          </FormBtn>
         </Form>
       </Formik>
     </>

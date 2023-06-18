@@ -20,8 +20,8 @@ const deleteContact = async id => {
   return response.data;
 };
 
-const updateContact = async id => {
-  const response = await axios.patch(`/contacts/${id}`);
+const updateContact = async (id, { name, number }) => {
+  const response = await axios.patch(`/contacts/${id}`, { name, number });
   return response.data;
 };
 

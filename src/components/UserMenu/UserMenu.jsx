@@ -2,7 +2,15 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from '../../hooks';
 import { logout } from '../../redux/auth/auth-operations';
 import defaultAvatar from '../../images/avatar.jpg';
-import { Container, Image, Title, LogoutWrap, Logout } from './UserMenu.styled';
+import { RiLogoutBoxRLine } from 'react-icons/ri';
+import {
+  Container,
+  Image,
+  Title,
+  LogoutWrap,
+  Logout,
+  LogoutText,
+} from './UserMenu.styled';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -16,7 +24,7 @@ const UserMenu = () => {
       <Title>Hello, {user} </Title>
       <LogoutWrap>
         <Logout type="button" onClick={() => dispatch(logout())}>
-          Log Out
+          <RiLogoutBoxRLine /> <LogoutText>Log Out</LogoutText>
         </Logout>
       </LogoutWrap>
     </Container>

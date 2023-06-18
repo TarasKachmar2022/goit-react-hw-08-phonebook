@@ -1,11 +1,11 @@
 import LoginForm from 'components/LoginForm';
-import { RegisterMainBlock } from './LoginPage.styled';
+import { LoginMainBlock } from './LoginPage.styled';
 
 const LoginPage = () => {
   return (
-    <RegisterMainBlock>
+    <LoginMainBlock>
       <LoginForm />
-    </RegisterMainBlock>
+    </LoginMainBlock>
   );
 };
 

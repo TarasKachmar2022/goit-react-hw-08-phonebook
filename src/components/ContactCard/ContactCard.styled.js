@@ -96,6 +96,7 @@ export const EditBtn = styled.button`
 export const DeleteBtn = styled.button`
   background-color: ${p => p.theme.colors.darkGrey};
   border-radius: 10px;
+  margin-left: 3px;
 
   color: ${p => p.theme.colors.white};
   background-color: ${p => p.theme.colors.darkGrey};
@@ -115,9 +116,11 @@ export const DeleteBtn = styled.button`
   }
   @media screen and (min-width: 768px) {
     padding: 6px 10px;
+    margin-left: 5px;
   }
   @media screen and (min-width: 1280px) {
     padding: 6px 10px;
+    margin-left: 5px;
     text-align: end;
   }
 `;

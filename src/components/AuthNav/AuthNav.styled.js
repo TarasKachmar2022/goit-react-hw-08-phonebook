@@ -3,7 +3,8 @@ import { NavLink as Link } from 'react-router-dom';
 
 export const NavigationContainer = styled.div`
   display: flex;
-  padding: 15px;
+  align-items: center;
+  padding: 5px;
 `;
 
 export const NavLinkWrap = styled.div`
@@ -11,6 +12,7 @@ export const NavLinkWrap = styled.div`
 `;
 
 export const NavLink = styled(Link)`
+  display: flex;
   border-radius: 25px;
   border: 2px solid ${p => p.theme.colors.orange};
   padding: 5px 10px;
@@ -31,4 +33,8 @@ export const NavLink = styled(Link)`
     background-color: ${p => p.theme.colors.orange};
     color: white;
   }
+`;
+
+export const NavLinkText = styled.span`
+  margin-left: 3px;
 `;

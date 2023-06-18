@@ -2,6 +2,10 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { GiArchiveRegister } from 'react-icons/gi';
+import { FaUser } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
 import { register } from '../../redux/auth/auth-operations';
 import routes from 'routes';
 import {
@@ -9,12 +13,14 @@ import {
   MainTitle,
   RegisterFormLabel,
   RegisterFormLabelSpan,
+  RegisterLabelIcon,
   RegisterInputField,
   ErrorMessage,
   RegisterFormBtnWrap,
   RegisterLoginLink,
   RegisterFormLoginLink,
   RegisterFormBtn,
+  RegisterFormBtnText,
 } from './RegisterForm.styled';
 
 const initialValues = { name: '', email: '', password: '' };
@@ -46,7 +52,12 @@ const RegisterForm = () => {
       >
         <Form>
           <RegisterFormLabel htmlFor="name">
-            <RegisterFormLabelSpan>Name</RegisterFormLabelSpan>
+            <RegisterFormLabelSpan>
+              <RegisterLabelIcon>
+                <FaUser />
+              </RegisterLabelIcon>
+              Name
+            </RegisterFormLabelSpan>
             <RegisterInputField
               id="name"
               name="name"
@@ -57,7 +68,12 @@ const RegisterForm = () => {
           </RegisterFormLabel>
 
           <RegisterFormLabel htmlFor="email">
-            <RegisterFormLabelSpan>Email</RegisterFormLabelSpan>
+            <RegisterFormLabelSpan>
+              <RegisterLabelIcon>
+                <MdEmail />
+              </RegisterLabelIcon>
+              Email
+            </RegisterFormLabelSpan>
             <RegisterInputField
               id="email"
               type="email"
@@ -68,7 +84,12 @@ const RegisterForm = () => {
           </RegisterFormLabel>
 
           <RegisterFormLabel htmlFor="password">
-            <RegisterFormLabelSpan>Password</RegisterFormLabelSpan>
+            <RegisterFormLabelSpan>
+              <RegisterLabelIcon>
+                <RiLockPasswordFill />
+              </RegisterLabelIcon>
+              Password
+            </RegisterFormLabelSpan>
             <RegisterInputField
               id="password"
               type="password"
@@ -84,7 +105,10 @@ const RegisterForm = () => {
                 <Link to={`${routes.LOGIN}`}>Log In.</Link>
               </RegisterLoginLink>
             </RegisterFormLoginLink>
-            <RegisterFormBtn type="submit">Register</RegisterFormBtn>
+            <RegisterFormBtn type="submit">
+              <GiArchiveRegister />{' '}
+              <RegisterFormBtnText>Register</RegisterFormBtnText>
+            </RegisterFormBtn>
           </RegisterFormBtnWrap>
         </Form>
       </Formik>

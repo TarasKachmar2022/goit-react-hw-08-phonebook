@@ -3,29 +3,10 @@ import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.footer`
   display: flex;
-  /* flex-wrap: wrap; */
   align-items: center;
   justify-content: center;
-  /* font-weight: 400; */
-  /* padding-top: 29px;
-  padding-bottom: 29px; */
-  /* font-size: 14px; */
-  /* line-height: 1.14; */
-  /* color: #545454; */
   backdrop-filter: blur(7.5px);
   box-shadow: rgb(0, 0, 0) 0px 0px 80px;
-
-  /* @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 1.18;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    padding-top: 29px;
-    padding-bottom: 29px;
-  } */
 `;
 
 export const Text = styled.p`
