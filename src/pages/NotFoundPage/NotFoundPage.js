@@ -1,6 +1,12 @@
 import routes from 'routes';
-import error from '../../images/not-found.webp';
-import { NotFoundContainer, BackHomeBtn } from './NotFoundPage.styled';
+import {
+  MessageTitle,
+  NotFoundContainer,
+  BackHomeBtn,
+  MainTitle,
+  NotFoundTitle,
+  DescTitle,
+} from './NotFoundPage.styled';
 
 const NotFound = () => {
   return (
@@ -9,7 +15,13 @@ const NotFound = () => {
         <BackHomeBtn to={`${routes.HOME}`}> BACK HOME </BackHomeBtn>
       </NotFoundContainer>
       <hr />
-      <img src={error} alt="Not Found 404" />
+      <MessageTitle>
+        <MainTitle>404</MainTitle>
+        <NotFoundTitle>Not Found</NotFoundTitle>
+        <DescTitle>
+          The resource requested could not be found on this server!
+        </DescTitle>
+      </MessageTitle>
     </div>
   );
 };

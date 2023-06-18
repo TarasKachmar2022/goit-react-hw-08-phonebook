@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-
 const getContacts = async () => {
   const response = await axios.get('/contacts');
 
@@ -9,9 +7,7 @@ const getContacts = async () => {
 };
 
 const postContact = async contact => {
-  console.log(contact);
   const response = await axios.post('/contacts', contact);
-  console.log(response.data);
   return response.data;
 };
 

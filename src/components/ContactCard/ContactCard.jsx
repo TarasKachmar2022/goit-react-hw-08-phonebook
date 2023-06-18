@@ -22,9 +22,6 @@ const ContactCard = ({ id, name, number }) => {
   const [openModal, setOpenModal] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  console.log(name);
-  console.log(number);
-
   const showModal = () => {
     setOpenModal(true);
   };
