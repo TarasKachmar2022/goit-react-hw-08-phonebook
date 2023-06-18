@@ -19,7 +19,6 @@ export const addContact = createAsyncThunk(
   async (contact, { rejectWithValue }) => {
     try {
       const contacts = await APIs.postContact(contact);
-      console.log(contacts);
       toast.success('Contact added successfully!');
       return contacts;
     } catch (error) {
@@ -44,7 +43,6 @@ export const deleteContact = createAsyncThunk(
 export const updateContact = createAsyncThunk(
   'contacts/updateContact',
   async ({ id, name, number }, { rejectWithValue }) => {
-    console.log(id);
     try {
       const contacts = await APIs.updateContact(id, {
         name,
