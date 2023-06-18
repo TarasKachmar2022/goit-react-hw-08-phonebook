@@ -41,15 +41,6 @@ export const LoginFormLabel = styled.label`
   margin-bottom: 10px;
 `;
 
-// export const LoginFormLabelIcon = styled.div`
-//   margin: 0 10px;
-
-//   & svg {
-//     font-size: 18px;
-//     filter: drop-shadow(0 0 5px #fff);
-//   }
-// `;
-
 export const LoginFormLabelSpan = styled.span`
   display: flex;
   font-weight: 600;

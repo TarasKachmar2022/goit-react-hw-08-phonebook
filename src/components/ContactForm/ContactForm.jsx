@@ -1,6 +1,5 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
-// import { nanoid } from 'nanoid';
 import { toast } from 'react-hot-toast';
 import { ThreeDots } from 'react-loader-spinner';
 import { useState } from 'react';
@@ -49,7 +48,6 @@ const ContactForm = () => {
     }
 
     const newContact = {
-      // id: nanoid(),
       name: values.name,
       number: values.number,
     };
