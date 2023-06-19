@@ -50,18 +50,17 @@ export const StudentBtn = styled(Link)`
   cursor: pointer;
   color: #000000;
   background-color: transparent;
+  transition: color 250ms linear;
 
   &:hover,
   &:focus {
     color: #ff6b08;
+  }
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    @media screen and (min-width: 320px) {
-      font-size: 12px;
-    }
-    @media screen and (min-width: 768px) {
-      font-size: 14px;
-    }
+  @media screen and (min-width: 320px) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
   }
 `;

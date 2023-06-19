@@ -1,5 +1,6 @@
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {
   MainTitle,
@@ -83,6 +84,13 @@ const ModalForm = ({ id, name, number, onClose }) => {
       </Formik>
     </>
   );
+};
+
+ModalForm.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ModalForm;
