@@ -1,6 +1,7 @@
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
+import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import {
   MainTitle,
@@ -11,6 +12,7 @@ import {
   ErrorMessage,
   FormBtn,
 } from '../../components/ModalForm/ModalForm.styled';
+import { useContacts } from '../../hooks';
 import { FaUser } from 'react-icons/fa';
 import { BsTelephoneFill } from 'react-icons/bs';
 import { FaEdit } from 'react-icons/fa';
@@ -24,8 +26,19 @@ const schema = yup.object().shape({
 const ModalForm = ({ id, name, number, onClose }) => {
   const initialValues = { name: name, number: number };
   const dispatch = useDispatch();
+  const contacts = useContacts();
 
   const handleSubmit = values => {
+    const findContacts = contacts.find(
+      contact =>
+        contact.name.toLowerCase().trim() === values.name.toLowerCase().trim()
+    );
+
+    if (findContacts) {
+      toast.error(`${findContacts.name} is already in contacts.`);
+      return;
+    }
+
     const newContact = {
       id: id,
       ...values,
