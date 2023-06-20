@@ -56,7 +56,7 @@ export const fetchCurrentUser = createAsyncThunk(
     const persistedToken = state.auth.token;
 
     if (persistedToken === null) {
-      return rejectWithValue();
+      return rejectWithValue(null);
     }
 
     token.set(persistedToken);
@@ -64,7 +64,7 @@ export const fetchCurrentUser = createAsyncThunk(
       const response = await AuthAPIs.fetchCurrentUser();
       return response;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue(null);
     }
   }
 );

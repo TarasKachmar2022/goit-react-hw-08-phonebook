@@ -6,3 +6,11 @@ export const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
 
   return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
 };
+
+// Те саме через children
+
+// export const RestrictedRoute = ({ redirectTo = '/', children }) => {
+//   const { isLoggedIn } = useAuth();
+
+//   return isLoggedIn ? <Navigate to={redirectTo} /> : children;
+// };

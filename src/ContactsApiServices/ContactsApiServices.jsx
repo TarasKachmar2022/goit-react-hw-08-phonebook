@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const getContacts = async () => {
-  const response = await axios.get('/contacts');
-
+const getContacts = async ({ signal }) => {
+  const response = await axios.get('/contacts', { signal });
   return response.data;
 };
 

@@ -1,14 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import APIs from 'ContactsApiServices';
 import { toast } from 'react-hot-toast';
+import axios from 'axios';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
-  async (_, { rejectWithValue }) => {
+  async ({ signal }, { rejectWithValue }) => {
     try {
-      const contacts = await APIs.getContacts();
+      const contacts = await APIs.getContacts({ signal });
       return contacts;
     } catch (error) {
+      if (axios.isCancel(error)) return rejectWithValue(null);
       return rejectWithValue(error.message);
     }
   }

@@ -13,13 +13,15 @@ const ContactsPage = () => {
   const error = useSelector(selectError);
 
   useEffect(() => {
+    const controller = new AbortController();
+    dispatch(fetchContacts({ signal: controller.signal }));
+    return () => controller.abort();
+  }, [dispatch]);
+
+  useEffect(() => {
     if (!error) return;
     toast.error('Oops, something went wrong, please try again!');
   }, [error]);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   return (
     <>

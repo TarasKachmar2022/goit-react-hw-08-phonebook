@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Loader from '../Loader';
+import Loader from './Loader';
 import routes from 'routes';
 import SharedLayout from 'components/SharedLayout';
-import { fetchCurrentUser } from '../../redux/auth/auth-operations';
+import { fetchCurrentUser } from '../redux/auth/auth-operations';
 import { PrivateRoute } from 'components/PrivateRoute';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 

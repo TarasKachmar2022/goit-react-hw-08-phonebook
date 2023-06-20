@@ -52,10 +52,10 @@ const ContactCard = ({ id, name, number }) => {
           {(openModal && (
             <ThreeDots height="20" width="16" color="white" />
           )) || <FaEdit />}
-          {openModal && (
-            <Modal id={id} name={name} number={number} onClose={closeModal} />
-          )}
         </EditBtn>
+        {openModal && (
+          <Modal id={id} name={name} number={number} onClose={closeModal} />
+        )}
         <DeleteBtn type="button" onClick={() => handleDelete(id)}>
           {(isDeleting && (
             <ThreeDots height="20" width="16" color="white" />

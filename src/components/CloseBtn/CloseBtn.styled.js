@@ -6,9 +6,6 @@ export const Container = styled.div`
 
 export const ModalCloseBtn = styled.div`
   position: absolute;
-  top: -18px;
-  right: -40px;
-  padding: 5px;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -24,5 +21,21 @@ export const ModalCloseBtn = styled.div`
 
   &:focus {
     color: orange;
+  }
+
+  @media screen and (min-width: 320px) {
+    top: -5px;
+    right: 5px;
+    padding: 5px;
+  }
+  @media screen and (min-width: 768px) {
+    top: -18px;
+    right: -40px;
+    padding: 5px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: -18px;
+    right: -40px;
+    padding: 5px;
   }
 `;
